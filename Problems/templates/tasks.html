@@ -1,0 +1,8 @@
+{% extends 'mainApp/wrapper.html' %}
+
+{% block content %}
+{%for post in object_list%}
+<a href="/Problems/{{post.id}}"><h2 class="col">{{post.title}}</h2></a>
+<h3>{{post.date}}</h3>
+{% endfor %}
+{% endblock %}
