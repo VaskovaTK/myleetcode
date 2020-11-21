@@ -1,0 +1,20 @@
+{% extends 'mainPage/common.html' %}
+{% block content %}
+<h1>It's form for your solution</h1>
+<div class = 'conteiner-fluid'>
+    <div class="row">
+        <div class="col-4">
+            <form method="POST" action="{%url 'solved'%}" style="margin: 1rem auto 0 auto; display: block">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="textarea">input your solution here</label>
+                    <textarea rows="4" cols="50" class="form-control" name="textarea" id="textarea"></textarea><br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
