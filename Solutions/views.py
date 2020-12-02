@@ -14,15 +14,15 @@ def solved(request):
         return render(request, 'checksol.html', context= dict)
     elif request.method =="POST":
         form = forms.SolForm(request.POST)
-        if form.is_valid():
-            # solution  = request.POST['solution']
-            dict = {"form" : form}
-            dict['success'] = True
-            dict['successing'] ='Form submitted'
-            return render(request, "Solutions/checksoltrue.html", dict)
-        else:
-            dict ={}
-            return render(request, "Solutions/checksolfalse.html", dict)
+        # if form.is_valid():
+        # solution  = request.POST['solution']
+        dict = {"form" : form}
+        dict['success'] = True
+        dict['successing'] ='Form submitted'
+        return render(request, "Solutions/checksoltrue.html", dict)
+        # else:
+        #     dict ={}
+        #     return render(request, "Solutions/checksolfalse.html", dict)
         # result = runpy._run_code(code=form, run_globals=None, mod_name=None,mod_spec=None, pkg_name=None, script_name=None)
         # if models.Task.realsolution == result:
         #     return render(request, 'Solutions/checksoltrue.html')
