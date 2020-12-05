@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from . import forms
-import runpy
 from Problems import models
 from django.shortcuts import HttpResponse
+import runProgram
 
 def sol(request):
     return render(request, 'Solutions/sol.html')
@@ -19,6 +19,9 @@ def solved(request):
         dict = {"form" : form}
         dict['success'] = True
         dict['successing'] ='Form submitted'
+
+        # todo save program to file
+        # runProgram.runFile("C:/projects/myleetcode/a.py", 60)
         return render(request, "Solutions/checksoltrue.html", dict)
         # else:
         #     dict ={}
