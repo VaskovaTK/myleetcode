@@ -1,9 +1,6 @@
 {% extends 'mainPage/common.html' %}
 {% block content %}
-{% if success == True%}:
-<h1> everything is right</h1>
-{{successing}}
-{%endif%}
-
-
+<h1>your data was {{data}}</h1>
+<br>
+<h1> your solution return {{afterRun}}</h1>
 {% endblock %}
