@@ -4,7 +4,7 @@ class Save():
         filename = "C:/projects/myleetcode/" + "userResult" + datetime.now().strftime("%Y%m%d%H%M%S") + str('.txt')
         file = open(filename, "w+")
         for index in range(0, len(retArray)):
-            file.write(str(index) + "\n")
+            file.write(str(retArray[index]) + "\n")
         file.close()
 
     def saveToFile(self, data: str):
