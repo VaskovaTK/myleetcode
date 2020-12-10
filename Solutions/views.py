@@ -22,6 +22,5 @@ def solved(request):
         afterRun = run.runFile(filePath, 0)
         dict = {"data" : data}
         dict['afterRun'] = afterRun
-        # todo узнать почему в текстовый файл записываются не те значения
         # todo сравнивать значения с realsolution
         return render(request, "Solutions/checksoltrue.html", dict)
