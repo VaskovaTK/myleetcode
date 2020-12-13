@@ -1,8 +1,15 @@
 {% extends 'mainPage/common.html' %}
 {% block content %}
-<h2 class="text-info">{{task.title}}</h2>
-<h3 class="text-info"> {{task.date}}</h3>
-<h3>{{task.post | safe | linebreaks}}</h3>
-<a href="solution/" class="btn btn-primary my-2">Try solve</a>
+{% for elem in task%}
+    <h2 class="text-dark">{{elem.title}}</h2>
+    <div class="alert alert-info mt-2">
+        <h4 class="text-success"> {{elem.post}}</h4>
+    </div>
+    <h6 class="text-dark">This task added {{elem.date}}</h6>
+{%endfor%}
+<br>
+<br>
+<h4 class="text-dark">If you know how to solve it </h4>
+<a href="/solutions" class="btn btn-primary my-2">Click Here</a>
 {% endblock %}
 <!--тут еще нужно кнопку показать решение, поле для ввода решений, сравнение решений-->

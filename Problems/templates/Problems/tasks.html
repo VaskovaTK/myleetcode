@@ -3,12 +3,7 @@
 <h1>Problems</h1>
 {% for element in tasks %}
     <div class="alert alert-info mt-2">
-        <h3>{{ element.title }}</h3>
-        <p>{{element.post}}</p>
+        <a href="/problems/{{element.id}}"><h3>{{ element.title }}</h3></a>
     </div>
 {% endfor %}
-<!--{%for post in object_list%}-->
-<!--<a href="/Problems/{{post.id}}"><h2 class="col">{{post.title}}</h2></a>-->
-<!--<h3>{{post.date}}</h3>-->
-<!--{% endfor %}-->
 {% endblock %}
