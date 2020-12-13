@@ -14,7 +14,6 @@ def task (request, pk):
     dict = {'task': task}
     return render(request, 'Problems/task.html', dict)
 
-# todo здесь запускать сравнение по персональному ключу в real solution с тем что лежит в отдельном файле user result
 # todo может быть здесь брать содержимое realsolution у pk и записывать его в файл а потом сравнивать с решением пользователя
 
 
