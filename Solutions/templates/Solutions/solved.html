@@ -1,10 +1,11 @@
 {% extends 'mainPage/common.html' %}
 {% block content %}
+<!--{{pk}}-->
 <h1>It's form for your solution</h1>
 <div class = 'conteiner-fluid'>
     <div class="row">
         <div class="col-4">
-            <form method="POST" action="{%url 'solved' %}" style="margin: 1rem auto 0 auto; display: block">
+            <form method="POST" action="{%url 'solved' {{pk}} %}" style="margin: 1rem auto 0 auto; display: block">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="textarea">input your solution here</label>
