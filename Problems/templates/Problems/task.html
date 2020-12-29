@@ -1,15 +1,33 @@
 {% extends 'mainPage/common.html' %}
 {% block content %}
 {% for elem in task%}
-    <h2 class="text-dark">{{elem.title}}</h2>
-    <div class="alert alert-info mt-2">
-        <h4 class="text-success"> {{elem.post}}</h4>
+<div class = 'conteiner-fluid'>
+    <div class="row">
+        <div class="col-4">
+            <h2 class="text-dark">{{elem.title}}</h2>
+                <div class="alert alert-info mt-2">
+                    <h4 class="text-success"> {{elem.post}}</h4>
+
+                <h6 class="text-dark">This task added {{elem.date}}</h6>
+                </div>
+        </div>
+        <div class="col-8">
+            <form method="POST" action="" style="margin: 1rem auto 0 auto; display: block">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="textarea">input your solution here</label>
+                    <textarea onkeydown="if(event.keyCode==9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" rows="4" cols="50" class="form-control" name="textarea" id="textarea"></textarea><br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <h6 class="text-dark">This task added {{elem.date}}</h6>
+</div>
+
+<br>
+<br>
+<!--<h4 class="text-dark">If you know how to solve it </h4>-->
+<!--<a href="/solved/{{elem.id}}" class="btn btn-primary my-2">Click Here</a>-->
 {%endfor%}
-<br>
-<br>
-<h4 class="text-dark">If you know how to solve it </h4>
-<a href="/solutions" class="btn btn-primary my-2">Click Here</a>
+
 {% endblock %}
-<!--тут еще нужно кнопку показать решение, поле для ввода решений, сравнение решений-->
