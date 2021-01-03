@@ -28,7 +28,7 @@ def task (request, pk):
         form = forms.SolForm(request.POST)
         data = form.data['textarea']
         save = saveToFile.Save()
-        filePath = save.saveToFile(data)
+        filePath, now = save.saveToFile(data)
         run = runProgram.RunProgram()
         afterRun = run.runFile(filePath, 0)
         rememberedID = request.session.get('remembered')
