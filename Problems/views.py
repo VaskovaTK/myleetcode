@@ -24,7 +24,7 @@ def task (request, pk):
         }
         return render(request, 'Problems/task.html', context= dict)
     elif request.method =="POST":
-        task = Task.objects.filter(id=pk)
+        task = Task.objects.get(id=pk)
         form = forms.SolForm(request.POST)
         data = form.data['textarea']
         save = saveToFile.Save()
@@ -34,14 +34,15 @@ def task (request, pk):
         rememberedID = request.session.get('remembered')
         dict = {"data" : data}
         dict['afterRun'] = afterRun
-        dict["task"] = task
+        dict["elem"] = task
+        dict['realsolution'] = task.realsolution
         dict['rememberedID'] = rememberedID
         # todo сравнивать значения с realsolution
         return render(request, "Problems/checksol.html", dict)
 
-    task = Task.objects.filter(id=pk)
-    dict = {'task': task}
-    return render(request, 'Problems/task.html', dict)
+    # task = Task.objects.filter(id=pk)
+    # dict = {'task': task}
+    # return render(request, 'Problems/task.html', dict)
 
 # todo может быть здесь брать содержимое realsolution у pk и записывать его в файл а потом сравнивать с решением пользователя
 
