@@ -2,8 +2,8 @@ from django.shortcuts import render
 from . import forms
 from Problems import models as modelTask
 from django.shortcuts import HttpResponse
-import runProgram
-import saveToFile
+import programRunner
+import ResultSaver
 
 # def sol(request):
 #     return render(request, 'Solutions/sol.html')

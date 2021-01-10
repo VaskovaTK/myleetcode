@@ -1,4 +1,14 @@
 {% extends 'mainPage/common.html' %}
 {% block content %}
-<h1> realsolution is {{realsolution}}</h1>
+    {%if checkSol.success %}
+        <div class="alert alert-success" role="alert">
+            <h2>Success</h2>
+        </div>
+    {%else%}
+        <div class="alert alert-danger" role="alert">
+            <h2> Your solution is wrong </h2>
+            <h2> expected result was {{checkSol.expected}}</h2>
+            <h2> actual result is {{checkSol.actual}}</h2>
+        </div>
+    {%endif%}
 {% endblock %}
