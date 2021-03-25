@@ -7,6 +7,7 @@
     {%else%}
         <div class="alert alert-danger" role="alert">
             <h2> Your solution is wrong </h2>
+            <h2> last input was {{checkSol.inputTask}} </h2>
             <h2> expected result was {{checkSol.expected}}</h2>
             <h2> actual result is {{checkSol.actual}}</h2>
         </div>
